@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>SONE-080 (ซับไทย ไม่เซ็น)</title>
+        <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/2.1.0/videojs-quality-levels.css" rel="stylesheet">
+   </head>
+   <body>
+       <h2>SONE-080 [ไม่เซ็น•ซับไทย]</h2>
+       
+       <video id="my-video" class="video-js vjs-default-skin" controls autoplay poster="https://s6.gifyu.com/images/bzG48.gif">
+        <source src="https://vz-1d9210ec-4bd.b-cdn.net/93238c6f-ee63-40fa-99df-8ac65315fa82/playlist.m3u8?height=1080&userid=1&video_version=2.8&platform=zixzorash&default_source=2.8" type="application/x-mpegURL">
+        <track src="" kind="subtitles" srclang="th" label="Thai" default>
+    </video>
+
+    <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/2.1.0/videojs-quality-levels.min.js"></script>
+    <script>
+        var player = videojs('my-video', {
+            controls: true,
+            preload: 'auto',
+            playbackRates: [0.5, 1, 1.5, 2],
+            responsive: true,
+            fluid: true,
+        });
+
+        player.ready(function() {
+            // เล่นวิดีโอด้วยความละเอียดสูงสุด
+            player.qualityLevels().on('addqualitylevel', function(event) {
+                if (event.qualityLevel.height === player.videoHeight()) {
+                    player.qualityLevels().setSelectedQuality(event.qualityLevel);
+                }
+            });
+
+            // เล่นคำบรรยายอัตโนมัติหากมี
+            player.textTracks().on('addtrack', function(event) {
+                var track = event.track;
+                if (track.kind === 'subtitles' && track.language === 'th') {
+                    track.mode = 'showing';
+                }
+            });
+        });
+    </script>
+       
+      <p><b>เรื่องนี้นางเอกสาวสวย โคโคโระ อาซาโนะ เธอก็เป็นพนักงานในร้านสะดวกซื้อ ซึ่งจริงๆแล้วเธอก็แอบรับงานเสริมด้วย และเธอก็ได้ทำงานอยู่กับเพื่อนร่วมงานหนุ่มหน้าหล่อ ซึ่งเขาก็แอบชอบเธออยู่เหมือนกัน และด้วยความสัมพันธ์อันดีที่ได้ทำงานด้วยกันทุกวันก็เลยชวนกันไปที่ห้อง และไอ้หนุ่มคนนี้ก็สมหวังในเมื่อเขาก็ได้เรือนร่างของเธอไปครอบครอง แต่อย่างไรก็ตามเขาก็ไม่สามารถที่จะครอบครองหัวใจของเธอได้เพราะเธอนั้นก็ยังคงไปรับงานกับหนุ่มอื่นอยู่เรื่อยๆ</b></p>
+   </body>
+</html>
