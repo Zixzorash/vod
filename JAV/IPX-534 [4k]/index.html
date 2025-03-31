@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPX-534 [4K•ซับไทย-ไม่เซ็น]</title>
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/2.1.0/videojs-quality-levels.css" rel="stylesheet">
+</head>
+<body>
+  <h2>IPX-534 [4K•ซับไทย-ไม่เซ็น]</h2>
+    
+    <video id="my-video" class="video-js vjs-default-skin" controls poster="https://s6.gifyu.com/images/bzGSP.gif">
+        <source src="https://vz-1d9210ec-4bd.b-cdn.net/18a97b22-f265-454a-99cf-ab895fdae37d/2160p/video.m3u8" type="application/x-mpegURL">
+        <track src="https://vcz-zixzorash-vodlix-cloud.b-cdn.net/u/zixzorash/files/videos/2025/03/30/17433027611QuuLXmCIw/subtitle/th/subtitle_17433027611QuuLXmCIw-th-subtitle_main.vtt" kind="subtitles" srclang="th" label="Thai" default>
+    </video>
+
+    <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/2.1.0/videojs-quality-levels.min.js"></script>
+    <script>
+        var player = videojs('my-video', {
+            controls: true,
+            preload: 'auto',
+            playbackRates: [0.5, 1, 1.5, 2],
+            responsive: true,
+            fluid: true,
+            
+        });
+
+        player.ready(function() {
+            // เล่นวิดีโอด้วยความละเอียดสูงสุด
+            player.qualityLevels().on('addqualitylevel', function(event) {
+                if (event.qualityLevel.height === player.videoHeight()) {
+                    player.qualityLevels().setSelectedQuality(event.qualityLevel);
+                }
+            });
+
+            // เล่นคำบรรยายอัตโนมัติหากมี
+            player.textTracks().on('addtrack', function(event) {
+                var track = event.track;
+                if (track.kind === 'subtitles' && track.language === 'th') {
+                    track.mode = 'showing';
+                }
+            });
+        });
+    </script>
+    
+    <p><b>Karen Kaede สาวออฟฟิศที่โดน เจ้านายคอยลวนลาม จนวันหนึ่งพลาดไปอยู่กันหัวหน้า 2 ต่อ 2 เลยโดนข่มขืน จับเย็ดแตกคาปาก จากนั้นก็โดนเจ้านาย พาไปเย็ดเรื่อยๆ จนต้องการควยของเจ้านายอย่างมาก เรียกร้องต้องการน้ำกาม</b></p>
+    
+</body>
+</html>
