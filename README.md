@@ -1,2 +1,0 @@
-# vod
-Video Page
