@@ -32,6 +32,9 @@
     </style>
 </head>
 <body>
+	
+	<h2>SONE-364 [4K•ซับไทย-ไม่เซ็น]</h2>
+	
     <div id="videoPlayer">
         <video id="video" controls poster="https://s6.gifyu.com/images/bzNJk.gif" autoplay controls>
             <!-- Replace your URL here -->
@@ -60,10 +63,10 @@
         });
 
         // Subtitles control example
-        subtitleBtn.addEventListener('click', () => {
-            const tracks = video.textTracks;
-            for (let i = 0; i < tracks.length; i++) {
-                tracks[i].mode = tracks[i].mode === 'showing' ? 'hidden' : 'showing';
+        player.textTracks().on('addtrack', function(event) {
+                var track = event.track;
+                if (track.kind === 'subtitles' && track.language === 'th') {
+                    track.mode = 'showing';
             }
         });
 
